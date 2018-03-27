@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="px-5 col-lg-6 col-xs-12 col-sm-12">
+      <div class="card">
+        <div class="bg-info card-header">
+          <h5 class="text-light">Add User</h5>
+        </div>
+        <div *ngIf="isFormError(form)" class="alert alert-danger border-bottom" style="border: none; border-radius: 0;">
+          <div>Required field missing!</div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Username</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text alert-danger" *ngIf="isInputError('username')">!</div>
+                  </div>
+                  <input formControlName="username" type="text" class="form-control" placeholder="Username..">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Password</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text alert-danger" *ngIf="isInputError('password')">!</div>
+                  </div>
+                  <input formControlName="password" type="password" class="form-control" placeholder="Password..">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label>First Name</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text alert-danger" *ngIf="isInputError('firstName')">!</div>
+                  </div>
+                  <input formControlName="firstName" type="text" class="form-control" placeholder="First Name..">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Last Name</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text alert-danger" *ngIf="isInputError('lastName')">!</div>
+                  </div>
+                  <input formControlName="lastName" type="text" class="form-control" placeholder="Last Name..">
+                </div>
+              </div>
+            </div>
+            <button [disabled]="!form.valid" class="btn btn-primary">Add User</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
