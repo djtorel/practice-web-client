@@ -34,8 +34,6 @@ export class AddUserFormService {
     }),
   ];
 
-  testThing: AddUserInputs;
-
   constructor() { }
 
   getInputs(): AddUserInputs {
