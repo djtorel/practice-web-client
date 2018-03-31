@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AddUserFormService {
 
-  _formElements: FormBase<any>[] = [
+  private _formElements: FormBase<any>[] = [
     new FormInput({
       key: 'username',
       label: 'Username',
@@ -39,7 +39,7 @@ export class AddUserFormService {
   constructor() { }
 
   getInputs(): AddUserInputs {
-    const inputs: any | AddUserInputs = {};
+    const inputs: any = {};
     this._formElements.forEach(el => {
       inputs[el.key] = el;
     });
