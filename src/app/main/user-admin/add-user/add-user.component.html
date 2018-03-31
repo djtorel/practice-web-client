@@ -12,18 +12,18 @@
           <form [formGroup]="form">
             <div class="form-row">
               <div class="col-md-6">
-                <app-form-input [input]="username" [form]="form"></app-form-input>
+                <app-form-input [input]="formInputs.username" [form]="form"></app-form-input>
               </div>
               <div class="col-md-6">
-                <app-form-input [input]="password" [form]="form"></app-form-input>
+                <app-form-input [input]="formInputs.password" [form]="form"></app-form-input>
               </div>
             </div>
             <div class="form-row">
               <div class="col-md-6">
-                <app-form-input [input]="firstName" [form]="form"></app-form-input>
+                <app-form-input [input]="formInputs.firstName" [form]="form"></app-form-input>
               </div>
               <div class="col-md-6">
-                <app-form-input [input]="lastName" [form]="form"></app-form-input>
+                <app-form-input [input]="formInputs.lastName" [form]="form"></app-form-input>
               </div>
             </div>
             <button [disabled]="!form.valid" class="btn btn-primary">Add User</button>

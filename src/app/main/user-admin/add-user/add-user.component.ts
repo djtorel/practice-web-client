@@ -5,6 +5,7 @@ import { FormControlService } from './../../../common/form/services/form-control
 import { AddUserFormService } from './add-user-form.service';
 import { FormInput } from '../../../common/form/models/form-input';
 import { FormBase } from '../../../common/form/models/form-base';
+import { AddUserInputs } from './add-user-inputs.model';
 
 @Component({
   selector: 'app-add-user',
@@ -14,20 +15,14 @@ import { FormBase } from '../../../common/form/models/form-base';
 })
 export class AddUserComponent implements OnInit {
   form: FormGroup;
-  username: FormInput;
-  password: FormInput;
-  firstName: FormInput;
-  lastName: FormInput;
+  formInputs: AddUserInputs;
 
   constructor(private fcs: FormControlService, private userService: AddUserFormService) {
   }
 
   ngOnInit() {
     this.form = this.fcs.toFormGroup(this.userService.formElements);
-    this.username = this.userService.username;
-    this.password = this.userService.password;
-    this.firstName = this.userService.firstName;
-    this.lastName = this.userService.lastName;
+    this.formInputs = this.userService.getInputs();
   }
 
   get isFormError() {
