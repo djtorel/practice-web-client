@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label [attr.for]="input.key">{{ input.label }}</label>
+    <div class="input-group">
+      <input
+        [formControlName]="input.key"
+        [type]="input.type" class="form-control"
+        [class.border-danger]="isInputError"
+        [placeholder]="input.placeHolder">
+      <div class="input-group-append">
+        <div class="input-group-text border-danger alert-danger" *ngIf="isInputError">!</div>
+      </div>
+    </div>
+    <div class="invalid-feedback" [style.display]="isInputError ? 'block' : 'none'">Enter {{ input.label }}</div>
+  </div>
+</form>

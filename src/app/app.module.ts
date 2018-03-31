@@ -13,6 +13,7 @@ import { UserAdminComponent } from './main/user-admin/user-admin.component';
 import { LoginComponent } from './main/login/login.component';
 import { AccountsComponent } from './main/accounts/accounts.component';
 import { AddUserComponent } from './main/user-admin/add-user/add-user.component';
+import { FormInputComponent } from './common/form/components/form-input/form-input.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,15 @@ import { AddUserComponent } from './main/user-admin/add-user/add-user.component'
     LoginComponent,
     AccountsComponent,
     AddUserComponent,
+    FormInputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
